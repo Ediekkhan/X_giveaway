@@ -19,7 +19,7 @@ class Config:
     MAX_DAILY_ENTRIES = 250  # Maximum giveaway entries per day
     MAX_ENGAGEMENT_THRESHOLD = 2000  # Max combined likes + retweets
     ACTION_DELAY = 10  # Seconds between actions (like, retweet, reply)
-    FETCH_INTERVAL = 120  # Seconds between tweet fetches
+    FETCH_INTERVAL = 900  # Seconds between tweet fetches
     
     SEARCH_QUERY = "giveaway OR trading OR props OR instant funded account" 
 
