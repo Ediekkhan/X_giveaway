@@ -54,7 +54,17 @@ class TweetMonitor:
             # Calculate start_time for the last 3 days
             # end_time can be current UTC time, start_time is 3 days before that
             now_utc = datetime.datetime.now(datetime.timezone.utc)
-            three_days_ago = now_utc - datetime.timedelta(days=3)
+            # three_days_ago = now_utc - datetime.timedelta(days=3)
+
+            # --- FIX STARTS HERE ---
+            # Subtract a buffer (e.g., 15 seconds) from the current time for end_time
+            # This ensures it's always in the past relative to the API request.
+            buffered_now_utc = now_utc - datetime.timedelta(seconds=15)
+            # --- FIX ENDS HERE ---
+
+            three_days_ago = buffered_now_utc - datetime.timedelta(days=3) # Base start_time on buffered_now_utc
+
+
 
             # Format to ISO 8601 string (YYYY-MM-DDTHH:mm:ssZ)
             start_time_iso = three_days_ago.isoformat(timespec='seconds').replace('+00:00', 'Z')

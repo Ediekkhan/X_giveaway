@@ -19,12 +19,13 @@ class Config:
     MAX_DAILY_ENTRIES = 250  # Maximum giveaway entries per day
     MAX_ENGAGEMENT_THRESHOLD = 2000  # Max combined likes + retweets
     ACTION_DELAY = 10  # Seconds between actions (like, retweet, reply)
-    FETCH_INTERVAL = 14400  # Seconds between tweet fetches
+    FETCH_INTERVAL = 3600  # Seconds between tweet fetches
+    # FETCH_INTERVAL = 14400  # Seconds between tweet fetches
     
     SEARCH_QUERY = "giveaway OR trading OR props OR instant funded account" 
 
     # Tweet fetching settings
-    TWEETS_PER_FETCH = 100  # Number of tweets to fetch per API call
+    TWEETS_PER_FETCH = 10  # Number of tweets to fetch per API call
     SINCE_ID_FILE = 'since_id.txt'  # File to store last processed tweet ID
     
     # Tagged users for replies (customize these)
